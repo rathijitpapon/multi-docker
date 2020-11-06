@@ -6,7 +6,7 @@ before_install:
   - docker build -t rathijit/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true rathijit/react-test npm run test -- --coverage
+  - docker run -e CI=true rathijit/react-test npm test -- --coverage
 
 after_success:
   - docker build -t rathijit/multi-client ./client
